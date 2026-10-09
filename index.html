@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & CV Profesional - Ridwan Mukti Maulana</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 glass border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#hero" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2 group">
+                    <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 text-white flex items-center justify-center font-black text-lg shadow-md group-hover:scale-105 transition-transform">RM</span>
+                    <span class="font-bold">Ridwan<span class="text-brand-500">.Dev</span></span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+                    <a href="#tentang" class="nav-link px-3 py-2 rounded-md hover:text-brand-500 transition-colors">Tentang Saya</a>
+                    <a href="#pengalaman" class="nav-link px-3 py-2 rounded-md hover:text-brand-500 transition-colors">Pengalaman</a>
+                    <a href="#keahlian" class="nav-link px-3 py-2 rounded-md hover:text-brand-500 transition-colors">Keahlian</a>
+                    <a href="#portofolio" class="nav-link px-3 py-2 rounded-md hover:text-brand-500 transition-colors">Portofolio</a>
+                    <a href="#kontak" class="nav-link px-3 py-2 rounded-md hover:text-brand-500 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Actions (Theme Toggle & Mobile Menu Btn) -->
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" aria-label="Ganti Tema" class="p-2 rounded-xl bg-slate-200/60 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <i id="theme-toggle-dark-icon" class="fas fa-moon hidden text-base"></i>
+                        <i id="theme-toggle-light-icon" class="fas fa-sun text-base text-amber-400"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg px-4 pt-2 pb-4 space-y-2 text-base font-medium shadow-lg">
+            <a href="#tentang" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Tentang Saya</a>
+            <a href="#pengalaman" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Pengalaman</a>
+            <a href="#keahlian" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Keahlian</a>
+            <a href="#portofolio" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Portofolio</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">Kontak</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center py-20 overflow-hidden">
+            <!-- Background Glow Decor -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-brand-500/20 to-accent-500/20 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Text Info -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 text-sm font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+                            Terbuka untuk Kolaborasi & Peluang Kerja
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                            Halo, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Ridwan Mukti Maulana</span>
+                        </h1>
+
+                        <p class="text-xl sm:text-2xl font-medium text-slate-600 dark:text-slate-300">
+                            Web Developer & Google Apps Script Specialist
+                        </p>
+
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Berfokus pada pengembangan aplikasi web interaktif, sistem manajemen berbasis Google Sheets & Apps Script, serta solusi digital yang responsif dan berdaya guna.
+                        </p>
+
+                        <!-- Buttons & CTA -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#kontak" class="px-7 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Hubungi Saya
+                            </a>
+                            <a href="javascript:void(0)" onclick="alert('Mengunduh CV Ridwan Mukti Maulana...')" class="px-7 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 border border-slate-300 dark:border-slate-700">
+                                <i class="fas fa-download"></i> Unduh CV
+                            </a>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-6 text-slate-500 dark:text-slate-400">
+                            <span class="text-sm font-medium">Temukan Saya:</span>
+                            <a href="https://github.com/ridwanmaulana267" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:text-brand-500 hover:bg-brand-500/10 transition-colors" aria-label="GitHub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/6281313088100" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:text-brand-500 hover:bg-brand-500/10 transition-colors" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="mailto:ridwanmau267@gmail.com" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:text-brand-500 hover:bg-brand-500/10 transition-colors" aria-label="Email">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Image / Avatar Container -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                            <!-- Outer Decorative Rings -->
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand-500 to-accent-500 rotate-6 opacity-80 blur-sm"></div>
+                            <div class="absolute inset-0 rounded-3xl bg-slate-900 dark:bg-slate-800 border-2 border-slate-700/50 overflow-hidden shadow-2xl flex items-center justify-center">
+                                <!-- Clean Avatar Graphic Placeholder -->
+                                <svg class="w-full h-full text-slate-300 dark:text-slate-600 bg-slate-100 dark:bg-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Floating Experience Badge -->
+                            <div class="absolute -bottom-4 -left-4 glass p-4 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-500 flex items-center justify-center text-xl font-bold">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Keahlian Utama</p>
+                                    <p class="text-base font-bold text-slate-900 dark:text-white">Web & GAS Dev</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TENTANG SAYA SECTION -->
+        <section id="tentang" class="py-20 bg-slate-100/50 dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-2">Tentang Saya</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Membangun Aplikasi Web & Solusi Digital</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Detail Paragraphs -->
+                    <div class="lg:col-span-7 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>
+                            Saya adalah seorang <strong>Web Developer & Google Apps Script Specialist</strong> asal Indonesia. Berkomitmen menciptakan solusi perangkat lunak berbasis web yang intuitif, cepat, dan bermanfaat untuk kebutuhan manajemen, bisnis, maupun pendidikan.
+                        </p>
+                        <p>
+                            Keahlian utama saya mencakup pembuatan antarmuka web dengan HTML, CSS, JavaScript, dan Tailwind CSS, serta integrasi sistem backend berbasis <strong>Google Apps Script</strong> dan <strong>Google Sheets Database</strong>.
+                        </p>
+                        <p>
+                            Saya selalu antusias mempelajari teknologi web modern terbaru, memecahkan tantangan pemrograman, serta merancang aplikasi fungsional yang memberikan dampak langsung bagi pengguna.
+                        </p>
+
+                        <div class="pt-4 grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-brand-500 text-lg"></i>
+                                <span class="font-medium text-slate-800 dark:text-slate-200">Integrasi Web & Spreadsheet</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-brand-500 text-lg"></i>
+                                <span class="font-medium text-slate-800 dark:text-slate-200">Desain Web Responsif</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-brand-500 text-lg"></i>
+                                <span class="font-medium text-slate-800 dark:text-slate-200">Solusi Berorientasi Hasil</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-brand-500 text-lg"></i>
+                                <span class="font-medium text-slate-800 dark:text-slate-200">Selalu Siap Belajar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Grid -->
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-brand-500/50 transition-colors">
+                            <h3 class="text-4xl font-extrabold text-brand-500 mb-1">2+</h3>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Proyek Web Utama</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-brand-500/50 transition-colors">
+                            <h3 class="text-4xl font-extrabold text-brand-500 mb-1">100%</h3>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Solusi Kustom</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-brand-500/50 transition-colors">
+                            <h3 class="text-4xl font-extrabold text-brand-500 mb-1">GAS</h3>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Google Apps Script</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-brand-500/50 transition-colors">
+                            <h3 class="text-4xl font-extrabold text-brand-500 mb-1">HTML</h3>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400">Frontend Web</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PENGALAMAN & PENDIDIKAN SECTION -->
+        <section id="pengalaman" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-2">Jejak Akademis & Pengembangan</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Pendidikan & Pengalaman Proyek</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Column 1: Pengalaman Proyek -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-lg">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Pengalaman & Proyek Independen</h3>
+                        </div>
+
+                        <div class="relative pl-6 border-l-2 border-slate-200 dark:border-slate-800 space-y-10">
+                            <!-- Item 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white dark:border-slate-900 group-hover:scale-125 transition-transform"></div>
+                                <span class="text-xs font-bold text-brand-500 bg-brand-500/10 px-2.5 py-1 rounded-full">Proyek Aktif</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Pengembang Web Keripik Jawara</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Sistem Penjualan & Inventaris Dagang</p>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
+                                    Merancang web interaktif pencatatan penjualan kripik, menghitung pendapatan bersih, serta merekap stok barang menggunakan integrasi Google Apps Script dan Google Sheets.
+                                </p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white dark:border-slate-900 group-hover:scale-125 transition-transform"></div>
+                                <span class="text-xs font-bold text-brand-500 bg-brand-500/10 px-2.5 py-1 rounded-full">Proyek Aktif</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Pengembang Web Jungle Class</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Sistem Informasi & Absensi Kelas</p>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
+                                    Membangun platform aplikasi web sekolah untuk manajemen presensi siswa, integrasi data foto/validasi, dan pusat informasi kegiatan kelas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Pendidikan & Lisensi -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-500 flex items-center justify-center text-lg">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Pendidikan</h3>
+                        </div>
+
+                        <div class="relative pl-6 border-l-2 border-slate-200 dark:border-slate-800 space-y-10">
+                            <!-- Item 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-accent-500 border-4 border-white dark:border-slate-900 group-hover:scale-125 transition-transform"></div>
+                                <span class="text-xs font-bold text-accent-500 bg-accent-500/10 px-2.5 py-1 rounded-full">2025 - 2028</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">MAPK Al-Hikmah</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Madrasah Aliyah Program Keagamaan</p>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
+                                    Aktif mengeksplorasi pengembangan teknologi informasi, pemrograman web mandiri, serta pengembangan sistem otomasi sekolah.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KEAHLIAN SECTION -->
+        <section id="keahlian" class="py-20 bg-slate-100/50 dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-2">Kemampuan Teknis</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Keahlian & Perkakas</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Hard Skills (Progress Bars) -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-laptop-code text-brand-500"></i> Hard Skills / Bahasa Pemrograman
+                        </h3>
+
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2 text-slate-700 dark:text-slate-300">
+                                <span>HTML5 & CSS3 / Tailwind CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-accent-500 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2 text-slate-700 dark:text-slate-300">
+                                <span>JavaScript (ES6+)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-accent-500 rounded-full transition-all duration-1000" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2 text-slate-700 dark:text-slate-300">
+                                <span>Google Apps Script (GAS Backend)</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-accent-500 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between font-semibold text-sm mb-2 text-slate-700 dark:text-slate-300">
+                                <span>Google Sheets Database / API</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-accent-500 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills & Tools -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <i class="fas fa-users text-accent-500"></i> Soft Skills
+                            </h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-medium shadow-sm hover:border-brand-500 transition-colors">Problem Solving</span>
+                                <span class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-medium shadow-sm hover:border-brand-500 transition-colors">Manajemen Logika Sistem</span>
+                                <span class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-medium shadow-sm hover:border-brand-500 transition-colors">Komunikasi Efektif</span>
+                                <span class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-medium shadow-sm hover:border-brand-500 transition-colors">Kerja Sama Tim</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <i class="fas fa-toolbox text-brand-500"></i> Tools & Ekosistem
+                            </h3>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 text-center">
+                                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:scale-105 transition-transform">
+                                    <i class="fab fa-html5 text-2xl text-orange-500 mb-1"></i>
+                                    <p class="text-xs font-medium">HTML5</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:scale-105 transition-transform">
+                                    <i class="fab fa-google text-2xl text-emerald-500 mb-1"></i>
+                                    <p class="text-xs font-medium">Apps Script</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:scale-105 transition-transform">
+                                    <i class="fas fa-table text-2xl text-green-500 mb-1"></i>
+                                    <p class="text-xs font-medium">Google Sheets</p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:scale-105 transition-transform">
+                                    <i class="fab fa-github text-2xl text-slate-300 mb-1"></i>
+                                    <p class="text-xs font-medium">GitHub</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PORTOFOLIO SECTION -->
+        <section id="portofolio" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-2">Karya & Proyek Real</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Portofolio Terpilih</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+                    <button class="filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand-500 text-white" data-filter="all">Semua</button>
+                    <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700" data-filter="web">Web App & Tools</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Card 1: Web Keripik Jawara -->
+                    <div class="project-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300" data-category="web">
+                        <div class="h-52 bg-gradient-to-br from-amber-500/20 to-brand-500/20 relative overflow-hidden flex items-center justify-center text-amber-500">
+                            <i class="fas fa-store text-6xl"></i>
+                            <span class="absolute top-3 right-3 bg-brand-500/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">Penjualan & Keuangan</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Web Keripik Jawara</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                                Aplikasi web untuk mencatat transaksi penjualan keripik, menghitung keuntungan dagang secara otomatis, dan memantau stok inventaris dengan backend Google Sheets.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-brand-500">HTML5</span>
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-brand-500">Google Apps Script</span>
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-brand-500">Google Sheets API</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://ridwanmaulana267.github.io/keripik-jawara/" target="_blank" class="py-2.5 rounded-xl bg-brand-500 text-white font-semibold hover:bg-brand-600 transition-colors text-sm flex items-center justify-center gap-1.5 shadow-md shadow-brand-500/20">
+                                    <i class="fas fa-external-link-alt text-xs"></i> Lihat Demo
+                                </a>
+                                <button onclick="openModal('Web Keripik Jawara', 'Sistem aplikasi web manajemen dagang keripik. Berfungsi menghitung penghasilan dagangan, rekapitulasi laba bersih, dan integrasi pencatatan stok masuk/keluar berbasis Google Sheets.', ['HTML5', 'CSS3', 'JavaScript', 'Google Apps Script', 'Google Sheets'], 'https://ridwanmaulana267.github.io/keripik-jawara/')" class="py-2.5 rounded-xl border border-brand-500 text-brand-500 font-semibold hover:bg-brand-500 hover:text-white transition-colors text-sm">
+                                    Detail Proyek
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Web Jungle Class -->
+                    <div class="project-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300" data-category="web">
+                        <div class="h-52 bg-gradient-to-br from-indigo-500/20 to-accent-500/20 relative overflow-hidden flex items-center justify-center text-indigo-500">
+                            <i class="fas fa-graduation-cap text-6xl"></i>
+                            <span class="absolute top-3 right-3 bg-accent-500/90 text-white text-xs font-bold px-2.5 py-1 rounded-full">Sistem Presensi Kelas</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Web Jungle Class</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                                Portal web sekolah dan sistem informasi kelas yang dilengkapi fitur absensi siswa interaktif, integrasi data presensi, dan manajemen informasi kelas online.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-accent-500">HTML5</span>
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-accent-500">Google Apps Script</span>
+                                <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-md font-medium text-accent-500">Google Sheets</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://jungleclass.my.id/" target="_blank" class="py-2.5 rounded-xl bg-accent-500 text-white font-semibold hover:bg-accent-600 transition-colors text-sm flex items-center justify-center gap-1.5 shadow-md shadow-accent-500/20">
+                                    <i class="fas fa-external-link-alt text-xs"></i> Lihat Demo
+                                </a>
+                                <button onclick="openModal('Web Jungle Class', 'Aplikasi Web Portal Kelas & Absensi Siswa. Memudahkan pencatatan presensi siswa, integrasi database Google Sheets, serta menampilkan pengumuman & jadwal kelas secara terstruktur.', ['HTML5', 'Tailwind CSS', 'JavaScript', 'Google Apps Script', 'Google Sheets'], 'https://jungleclass.my.id/')" class="py-2.5 rounded-xl border border-accent-500 text-accent-500 font-semibold hover:bg-accent-500 hover:text-white transition-colors text-sm">
+                                    Detail Proyek
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KONTAK SECTION -->
+        <section id="kontak" class="py-20 bg-slate-100/50 dark:bg-slate-800/40 border-t border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-brand-500 mb-2">Mari Berdiskusi</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Hubungi Saya</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Kirim Email</p>
+                                <a href="mailto:ridwanmau267@gmail.com" class="text-base font-bold text-slate-900 dark:text-white hover:text-brand-500 transition-colors">ridwanmau267@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">WhatsApp / Telefon</p>
+                                <a href="https://wa.me/6281313088100" target="_blank" class="text-base font-bold text-slate-900 dark:text-white hover:text-brand-500 transition-colors">+62 813-1308-8100</a>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Lokasi</p>
+                                <p class="text-base font-bold text-slate-900 dark:text-white">Tasikmalaya / Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                            
+                            <!-- Alert Msg Box -->
+                            <div id="form-alert" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Alamat Email</label>
+                                    <input type="email" id="email" required placeholder="email@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Subjek / Topik</label>
+                                <input type="text" id="subject" required placeholder="Penawaran Proyek / Diskusi Kerjasama" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Pesan Anda</label>
+                                <textarea id="message" rows="4" required placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-lg shadow-brand-500/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center">
+            <p class="text-sm">
+                &copy; <span id="year"></span> Ridwan Mukti Maulana. Seluruh Hak Cipta Dilindungi.
+            </p>
+            <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+                <a href="https://github.com/ridwanmaulana267" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-github text-lg"></i></a>
+                <a href="https://wa.me/6281313088100" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
+                <a href="mailto:ridwanmau267@gmail.com" class="hover:text-white transition-colors"><i class="fas fa-envelope text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETAIL PROYEK -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full p-6 border border-slate-200 dark:border-slate-800 shadow-2xl relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-slate-900 dark:text-white mb-3"></h3>
+            <p id="modal-desc" class="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed"></p>
+            <div class="mb-6">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Teknologi Digunakan</h4>
+                <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <a id="modal-demo-btn" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-500 text-white font-semibold text-sm hover:bg-brand-600 transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-external-link-alt text-xs"></i> Kunjungi Website
+                </a>
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Automatic Year Set
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark / Light Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function updateThemeIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            updateThemeIcons();
+        });
+        updateThemeIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-500', 'text-white');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                });
+
+                btn.classList.add('active', 'bg-brand-500', 'text-white');
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Box Functions
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalTags = document.getElementById('modal-tags');
+        const modalDemoBtn = document.getElementById('modal-demo-btn');
+
+        function openModal(title, description, tags, demoUrl) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = description;
+            modalTags.innerHTML = tags.map(t => `<span class="text-xs bg-brand-500/10 text-brand-500 px-3 py-1 rounded-lg font-semibold">${t}</span>`).join('');
+            
+            if (demoUrl) {
+                modalDemoBtn.href = demoUrl;
+                modalDemoBtn.classList.remove('hidden');
+            } else {
+                modalDemoBtn.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const formAlert = document.getElementById('form-alert');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            formAlert.className = "p-4 rounded-xl text-sm font-medium bg-brand-500/20 text-brand-600 dark:text-brand-400 border border-brand-500/30";
+            formAlert.textContent = "Terima kasih! Pesan Anda telah terkirim. Saya akan membalas segera.";
+            formAlert.classList.remove('hidden');
+
+            contactForm.reset();
+
+            setTimeout(() => {
+                formAlert.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
